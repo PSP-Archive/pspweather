@@ -1,0 +1,916 @@
+
+Allocating common symbols
+Common symbol       size              file
+
+last_valid_address  0x4               malloc.o
+pg_showframe        0x4               pg.o
+pg_screenmode       0x4               pg.o
+pg_drawframe        0x4               pg.o
+managed_memory_start
+                    0x4               malloc.o
+allocbuf            0x400             malloc.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD /usr/local/pspdev/psp/sdk/lib//libpspdebug.a
+LOAD /usr/local/pspdev/psp/sdk/lib//libpsplibc.a
+LOAD /usr/local/pspdev/psp/sdk/lib//libpspkernel.a
+LOAD startup.o
+LOAD main.o
+LOAD pg.o
+LOAD nlh.o
+LOAD _clib.o
+LOAD parser.o
+LOAD malloc.o
+LOAD screenshot.o
+LOAD icons.o
+Address of section .text set to 0x8900000
+                0x0000000008900000                PROVIDE (__executable_start, 0x8900000)
+                0x0000000008900000                . = 0x8900000
+
+.interp
+ *(.interp)
+
+.reginfo        0x0000000008900000       0x18
+ *(.reginfo)
+ .reginfo       0x0000000008900000       0x18 startup.o
+
+.dynamic
+ *(.dynamic)
+
+.hash
+ *(.hash)
+
+.dynsym
+ *(.dynsym)
+
+.dynstr
+ *(.dynstr)
+
+.gnu.version
+ *(.gnu.version)
+
+.gnu.version_d
+ *(.gnu.version_d)
+
+.gnu.version_r
+ *(.gnu.version_r)
+
+.rel.dyn
+
+.rel.init
+ *(.rel.init)
+
+.rela.init
+ *(.rela.init)
+
+.rel.text
+ *(.rel.text .rel.text.* .rel.gnu.linkonce.t.*)
+
+.rela.text
+ *(.rela.text .rela.text.* .rela.gnu.linkonce.t.*)
+
+.rel.fini
+ *(.rel.fini)
+
+.rela.fini
+ *(.rela.fini)
+
+.rel.sceStub.text
+ *(.rel.sceStub.text)
+ *(SORT(.rel.sceStub.text.*))
+
+.rel.lib.ent.top
+ *(.rel.lib.ent.top)
+
+.rel.lib.ent
+ *(.rel.lib.ent)
+
+.rel.lib.ent.btm
+ *(.rel.lib.ent.btm)
+
+.rel.lib.stub.top
+ *(.rel.lib.stub.top)
+
+.rel.lib.stub
+ *(.rel.lib.stub)
+
+.rel.lib.stub.btm
+ *(.rel.lib.stub.btm)
+
+.rel.rodata.sceModuleInfo
+ *(.rel.rodata.sceModuleInfo)
+
+.rel.rodata.sceResident
+ *(.rel.rodata.sceResident)
+
+.rel.rodata.sceNid
+ *(.rel.rodata.sceNid)
+
+.rel.rodata.sceVstub
+ *(.rel.rodata.sceVstub)
+ *(SORT(.rel.rodata.sceVstub.*))
+
+.rel.rodata
+ *(.rel.rodata .rel.rodata.* .rel.gnu.linkonce.r.*)
+
+.rela.rodata
+ *(.rela.rodata .rela.rodata.* .rela.gnu.linkonce.r.*)
+
+.rel.data.rel.ro
+ *(.rel.data.rel.ro*)
+
+.rela.data.rel.ro
+ *(.rel.data.rel.ro*)
+
+.rel.data
+ *(.rel.data .rel.data.* .rel.gnu.linkonce.d.*)
+
+.rela.data
+ *(.rela.data .rela.data.* .rela.gnu.linkonce.d.*)
+
+.rel.tdata
+ *(.rel.tdata .rel.tdata.* .rel.gnu.linkonce.td.*)
+
+.rela.tdata
+ *(.rela.tdata .rela.tdata.* .rela.gnu.linkonce.td.*)
+
+.rel.tbss
+ *(.rel.tbss .rel.tbss.* .rel.gnu.linkonce.tb.*)
+
+.rela.tbss
+ *(.rela.tbss .rela.tbss.* .rela.gnu.linkonce.tb.*)
+
+.rel.ctors
+ *(.rel.ctors)
+
+.rela.ctors
+ *(.rela.ctors)
+
+.rel.dtors
+ *(.rel.dtors)
+
+.rela.dtors
+ *(.rela.dtors)
+
+.rel.got
+ *(.rel.got)
+
+.rela.got
+ *(.rela.got)
+
+.rel.sdata
+ *(.rel.sdata .rel.sdata.* .rel.gnu.linkonce.s.*)
+
+.rela.sdata
+ *(.rela.sdata .rela.sdata.* .rela.gnu.linkonce.s.*)
+
+.rel.sbss
+ *(.rel.sbss .rel.sbss.* .rel.gnu.linkonce.sb.*)
+
+.rela.sbss
+ *(.rela.sbss .rela.sbss.* .rela.gnu.linkonce.sb.*)
+
+.rel.sdata2
+ *(.rel.sdata2 .rel.sdata2.* .rel.gnu.linkonce.s2.*)
+
+.rela.sdata2
+ *(.rela.sdata2 .rela.sdata2.* .rela.gnu.linkonce.s2.*)
+
+.rel.sbss2
+ *(.rel.sbss2 .rel.sbss2.* .rel.gnu.linkonce.sb2.*)
+
+.rela.sbss2
+ *(.rela.sbss2 .rela.sbss2.* .rela.gnu.linkonce.sb2.*)
+
+.rel.bss
+ *(.rel.bss .rel.bss.* .rel.gnu.linkonce.b.*)
+
+.rela.bss
+ *(.rela.bss .rela.bss.* .rela.gnu.linkonce.b.*)
+
+.rel.plt
+ *(.rel.plt)
+
+.rela.plt
+ *(.rela.plt)
+
+.init
+ *(.init)
+
+.plt
+ *(.plt)
+
+.text           0x0000000008900000     0x6bc0
+                0x0000000008900000                _ftext = .
+ *(.text .stub .text.* .gnu.linkonce.t.*)
+ .text          0x0000000008900000       0xb4 startup.o
+                0x0000000008900000                _start
+ .text.stub     0x00000000089000b4      0x490 startup.o
+                0x00000000089003fc                sceNetAdhocGameModeCreateMaster
+                0x0000000008900344                sceNetInetInetAddr
+                0x000000000890015c                sceKernelLoadModuleBufferUsbWlan
+                0x0000000008900324                sceNetInetShutdown
+                0x000000000890048c                sceNetAdhocctlGetAddrByName
+                0x0000000008900264                sceNetTerm
+                0x000000000890040c                sceNetAdhocGameModeUpdateMaster
+                0x00000000089000bc                pspDisplaySetFrameBuf
+                0x00000000089000ec                sceIoOpen
+                0x000000000890038c                sceNetAdhocPdpCreate
+                0x000000000890025c                sceNetInit
+                0x00000000089003c4                sceNetAdhocPtpListen
+                0x00000000089001e4                sceCtrlInit
+                0x0000000008900314                sceNetInetSendmsg
+                0x00000000089004bc                sceNetAdhocctlExitGameMode
+                0x00000000089002b4                sceNetInetConnect
+                0x000000000890044c                sceNetAdhocctlJoin
+                0x0000000008900474                sceNetAdhocctlGetState
+                0x00000000089000fc                sceIoMkdir
+                0x00000000089002e4                sceNetInetRecv
+                0x0000000008900354                sceNetInetInetNtop
+                0x00000000089001b4                sceCtrlPeekBufferPositive
+                0x0000000008900274                sceNetGetLocalEtherAddr
+                0x000000000890034c                sceNetInetInetAton
+                0x000000000890036c                sceNetAdhocTerm
+                0x00000000089001cc                sceCtrlReadBufferNegative
+                0x000000000890029c                sceNetInetBind
+                0x00000000089002a4                sceNetInetClose
+                0x000000000890043c                sceNetAdhocctlConnect
+                0x00000000089004ac                sceNetAdhocctlCreateEnterGameMode
+                0x00000000089003d4                sceNetAdhocPtpSend
+                0x000000000890045c                sceNetAdhocctlDisconnect
+                0x00000000089002ac                sceNetInetCloseWithRST
+                0x000000000890014c                sceKernelLoadModule
+                0x0000000008900394                sceNetAdhocPdpSend
+                0x00000000089001dc                sceCtrlReadLatch
+                0x000000000890021c                sceKernelGetThreadId
+                0x000000000890026c                sceNetThreadAbort
+                0x000000000890013c                sceKernelRegisterExitCallback
+                0x0000000008900214                sceKernelStartThread
+                0x00000000089001f4                sceCtrlSetAnalogMode
+                0x0000000008900114                sceIoRename
+                0x000000000890016c                sceKernelStopModule
+                0x0000000008900414                sceNetAdhocGameModeUpdateReplica
+                0x00000000089004fc                sceNetResolverStop
+                0x000000000890011c                sceIoIoctl
+                0x00000000089001fc                sceKernelCreateCallback
+                0x000000000890037c                sceNetAdhocSetSocketAlert
+                0x0000000008900334                sceNetInetSocketAbort
+                0x0000000008900224                sceKernelSleepThread
+                0x00000000089000d4                sceIoWrite
+                0x0000000008900464                sceNetAdhocctlAddHandler
+                0x0000000008900234                sceKernelSuspendThread
+                0x00000000089002ec                sceNetInetRecvfrom
+                0x00000000089004dc                sceNetResolverCreate
+                0x0000000008900164                sceKernelStartModule
+                0x0000000008900444                sceNetAdhocctlCreate
+                0x0000000008900124                sceKernelLoadExec
+                0x000000000890033c                sceNetInetGetErrno
+                0x000000000890051c                sceNetApctlAddHandler
+                0x000000000890052c                sceNetApctlConnect
+                0x00000000089002bc                sceNetInetGetpeername
+                0x0000000008900494                sceNetAdhocctlGetNameByAddr
+                0x0000000008900184                sceKernelStopUnloadSelfModule
+                0x000000000890019c                sceCtrlGetSamplingCycle
+                0x00000000089003f4                sceNetAdhocGetPtpStat
+                0x0000000008900294                sceNetInetAccept
+                0x000000000890042c                sceNetAdhocctlInit
+                0x00000000089004a4                sceNetAdhocctlGetScanInfo
+                0x000000000890053c                sceNetApctlGetState
+                0x000000000890024c                sceKernelGetThreadCurrentPriority
+                0x00000000089001d4                sceCtrlPeekLatch
+                0x0000000008900504                sceNetApctlInit
+                0x00000000089004f4                sceNetResolverStartAtoN
+                0x000000000890031c                sceNetInetSetsockopt
+                0x00000000089004c4                sceNetAdhocctlGetGameModeInfo
+                0x0000000008900204                sceKernelSleepThreadCB
+                0x000000000890020c                sceKernelCreateThread
+                0x000000000890039c                sceNetAdhocPdpRecv
+                0x0000000008900254                sceKernelDcacheWritebackAll
+                0x00000000089002dc                sceNetInetPoll
+                0x00000000089000f4                sceIoRemove
+                0x0000000008900174                sceKernelUnloadModule
+                0x00000000089003e4                sceNetAdhocPtpFlush
+                0x0000000008900424                sceNetAdhocGameModeDeleteReplica
+                0x00000000089000cc                sceIoRead
+                0x000000000890018c                sceKernelQueryModuleInfo
+                0x0000000008900404                sceNetAdhocGameModeCreateReplica
+                0x00000000089001c4                sceCtrlReadBufferPositive
+                0x00000000089003b4                sceNetAdhocPtpOpen
+                0x000000000890046c                sceNetAdhocctlDelHandler
+                0x00000000089002cc                sceNetInetGetsockopt
+                0x00000000089003dc                sceNetAdhocPtpRecv
+                0x00000000089003ec                sceNetAdhocPtpClose
+                0x0000000008900364                sceNetAdhocInit
+                0x000000000890023c                sceKernelWaitThreadEnd
+                0x0000000008900434                sceNetAdhocctlTerm
+                0x00000000089000e4                sceIoClose
+                0x0000000008900104                sceIoRmdir
+                0x00000000089002fc                sceNetInetSelect
+                0x0000000008900374                sceNetAdhocPollSocket
+                0x0000000008900144                sceKernelLoadModuleByID
+                0x000000000890047c                sceNetAdhocctlGetAdhocId
+                0x000000000890035c                sceNetInetInetPton
+                0x0000000008900524                sceNetApctlDelHandler
+                0x000000000890017c                sceKernelSelfStopUnloadModule
+                0x0000000008900384                sceNetAdhocGetSocketAlert
+                0x00000000089001ec                sceCtrlRead
+                0x00000000089000b4                pspDisplaySetMode
+                0x00000000089004d4                sceNetResolverTerm
+                0x0000000008900284                sceNetInetInit
+                0x00000000089004b4                sceNetAdhocctlJoinEnterGameMode
+                0x00000000089001a4                sceCtrlSetSamplingMode
+                0x000000000890030c                sceNetInetSendto
+                0x00000000089003cc                sceNetAdhocPtpAccept
+                0x000000000890032c                sceNetInetSocket
+                0x00000000089003bc                sceNetAdhocPtpConnect
+                0x0000000008900154                sceKernelLoadModuleMs
+                0x0000000008900484                sceNetAdhocctlGetPeerList
+                0x00000000089000dc                sceIoLseek
+                0x00000000089004e4                sceNetResolverDelete
+                0x00000000089002c4                sceNetInetGetsockname
+                0x0000000008900304                sceNetInetSend
+                0x0000000008900244                sceKernelChangeThreadPriority
+                0x000000000890041c                sceNetAdhocGameModeDeleteMaster
+                0x0000000008900134                sceKernelExitGameWithStatus
+                0x00000000089002f4                sceNetInetRecvmsg
+                0x00000000089002d4                sceNetInetListen
+                0x00000000089001ac                sceCtrlGetSamplingMode
+                0x000000000890028c                sceNetInetTerm
+                0x000000000890049c                sceNetAdhocctlGetParameter
+                0x000000000890012c                sceKernelExitGame
+                0x00000000089004ec                sceNetResolverStartNtoA
+                0x0000000008900514                sceNetApctlGetInfo
+                0x00000000089004cc                sceNetResolverInit
+                0x000000000890027c                sceNetGetMallocStat
+                0x000000000890022c                sceKernelResumeThread
+                0x00000000089003a4                sceNetAdhocPdpDelete
+                0x00000000089001bc                sceCtrlPeekBufferNegative
+                0x000000000890010c                sceIoDevctl
+                0x0000000008900454                sceNetAdhocctlScan
+                0x0000000008900194                sceCtrlSetSamplingCycle
+                0x00000000089003ac                sceNetAdhocGetPdpStat
+                0x0000000008900534                sceNetApctlDisconnect
+                0x00000000089000c4                pspDisplayWaitVblankStart
+                0x000000000890050c                sceNetApctlTerm
+ .text          0x0000000008900544     0x2b1c main.o
+                0x0000000008900688                FormatHex
+                0x0000000008902518                user_thread
+                0x00000000089005a8                my_strcpy
+                0x0000000008900610                AsHex
+                0x00000000089013cc                getString
+                0x0000000008902f08                main
+                0x000000000890078c                my_printn
+                0x0000000008900728                my_print
+                0x0000000008900e3c                _strncmp
+                0x00000000089007f4                my_printn8
+                0x0000000008900868                addNode
+                0x0000000008900544                my_strlen
+ .text          0x0000000008903060     0x1328 pg.o
+                0x00000000089030e4                pgGetVramAddr
+                0x0000000008903060                pgWaitVn
+                0x00000000089030b4                pgWaitV
+                0x00000000089034ec                pgBitBlt
+                0x0000000008903a24                pgRefresh
+                0x0000000008903460                pgFillvram
+                0x0000000008903a9c                Draw_Char_Hankaku
+                0x0000000008903378                pgPrint4
+                0x0000000008903818                pgScreenFrame
+                0x00000000089039ec                pgScreenFlipV
+                0x000000000890315c                pgInit
+                0x0000000008903290                pgPrint2
+                0x0000000008903e3c                Draw_Char_Zenkaku
+                0x000000000890364c                pgPutChar
+                0x00000000089041a8                mh_print
+                0x00000000089031a8                pgPrint
+                0x0000000008903c44                Draw_Char_Hankaku2
+                0x0000000008903964                pgScreenFlip
+ .text          0x0000000008904388      0x8d4 nlh.o
+                0x0000000008904924                nlhLoadDrivers
+                0x0000000008904b04                nlhTerm
+                0x0000000008904728                LoadAndStartAndPatch
+                0x00000000089049a8                nlhInit
+                0x0000000008904bd0                htons
+ .text          0x0000000008904c5c      0x658 _clib.o
+                0x0000000008904ccc                _strcat
+                0x0000000008904dec                _strcmp
+                0x0000000008905290                _puts
+                0x0000000008904d60                _strncpy
+                0x0000000008905128                _memcpy
+                0x000000000890500c                _memset
+                0x0000000008904e80                _strchr
+                0x0000000008904c5c                _strcpy
+                0x0000000008904f64                _strrchr
+                0x0000000008904f08                _strlen
+                0x0000000008905250                _printf
+ .text          0x00000000089052b4      0x2f0 parser.o
+                0x00000000089054b8                copyBuff
+                0x00000000089052b4                getPos
+ .text          0x00000000089055a4      0x324 malloc.o
+                0x00000000089055f4                sbrk_psp
+                0x0000000008905674                free_psp
+                0x00000000089057ec                realloc
+                0x00000000089056b0                malloc_psp
+                0x00000000089055a4                _sbrk_psp
+                0x000000000890562c                malloc_psp_init
+ .text          0x00000000089058c8      0x328 screenshot.o
+                0x0000000008905914                screenshot
+                0x00000000089058c8                writeByte
+ .text          0x0000000008905bf0      0xfd0 icons.o
+                0x0000000008905ce4                displayIcon
+                0x0000000008905bf0                plotCellImage
+ *(.text.*personality*)
+ *(.gnu.warning)
+ *(.mips16.fn.*)
+ *(.mips16.call.*)
+
+.fini
+ *(.fini)
+
+.sceStub.text
+ *(.sceStub.text)
+ *(SORT(.sceStub.text.*))
+                0x0000000008906bc0                PROVIDE (__etext, .)
+                0x0000000008906bc0                PROVIDE (_etext, .)
+                0x0000000008906bc0                PROVIDE (etext, .)
+
+.lib.ent.top
+ *(.lib.ent.top)
+
+.lib.ent        0x0000000008906bc0       0x10
+ *(.lib.ent)
+ .lib.ent       0x0000000008906bc0       0x10 startup.o
+
+.lib.ent.btm    0x0000000008906bd0        0x4
+ *(.lib.ent.btm)
+ .lib.ent.btm   0x0000000008906bd0        0x4 startup.o
+
+.lib.stub.top
+ *(.lib.stub.top)
+
+.lib.stub       0x0000000008906bd4      0x104
+ *(.lib.stub)
+ .lib.stub      0x0000000008906bd4      0x104 startup.o
+                0x0000000008906bd4                __lib_stub_top
+
+.lib.stub.btm   0x0000000008906cd8        0x4
+ *(.lib.stub.btm)
+ .lib.stub.btm  0x0000000008906cd8        0x4 startup.o
+                0x0000000008906cd8                __lib_stub_bottom
+
+.rodata.sceModuleInfo
+ *(.rodata.sceModuleInfo)
+
+.rodata.sceResident
+ *(.rodata.sceResident)
+
+.rodata.sceNid
+ *(.rodata.sceNid)
+
+.rodata.sceVstub
+ *(.rodata.sceVstub)
+ *(SORT(.rodata.sceVstub.*))
+
+.rodata         0x0000000008906cdc    0x237e0
+ *(.rodata .rodata.* .gnu.linkonce.r.*)
+ .rodata.entrytable
+                0x0000000008906cdc       0x14 startup.o
+ .rodata.stubmodulename
+                0x0000000008906cf0       0xf8 startup.o
+ .rodata.stubidtable
+                0x0000000008906de8      0x248 startup.o
+ .rodata        0x0000000008907030      0x998 main.o
+ .rodata        0x00000000089079c8    0x227e0 pg.o
+                0x00000000089079d8                font
+                0x00000000089081d8                hankaku_font10
+                0x0000000008908818                zenkaku_font10
+ .rodata        0x000000000892a1a8      0x1e0 nlh.o
+ .rodata        0x000000000892a388       0x1c parser.o
+ .rodata        0x000000000892a3a4       0x44 screenshot.o
+                0x000000000892a3b4                tgaHeader
+ .rodata        0x000000000892a3e8       0xd4 icons.o
+
+.rodata1
+ *(.rodata1)
+
+.sdata2
+ *(.sdata2 .sdata2.* .gnu.linkonce.s2.*)
+
+.sbss2
+ *(.sbss2 .sbss2.* .gnu.linkonce.sb2.*)
+
+.eh_frame_hdr
+ *(.eh_frame_hdr)
+
+.eh_frame
+ *(.eh_frame)
+
+.gcc_except_table
+ *(.gcc_except_table)
+ *(.gcc_except_table.*)
+                0x000000000892a5bc                . = (ALIGN (0x100) + (. & 0xff))
+
+.eh_frame
+ *(.eh_frame)
+
+.gcc_except_table
+ *(.gcc_except_table)
+ *(.gcc_except_table.*)
+
+.tdata
+ *(.tdata .tdata.* .gnu.linkonce.td.*)
+
+.tbss
+ *(.tbss .tbss.* .gnu.linkonce.tb.*)
+ *(.tcommon)
+                0x000000000892a5bc                . = ALIGN (0x4)
+                0x000000000892a5bc                PROVIDE (__preinit_array_start, .)
+
+.preinit_array
+ *(.preinit_array)
+                0x000000000892a5bc                PROVIDE (__preinit_array_end, .)
+                0x000000000892a5bc                PROVIDE (__init_array_start, .)
+
+.init_array
+ *(.init_array)
+                0x000000000892a5bc                PROVIDE (__init_array_end, .)
+                0x000000000892a5bc                PROVIDE (__fini_array_start, .)
+
+.fini_array
+ *(.fini_array)
+                0x000000000892a5bc                PROVIDE (__fini_array_end, .)
+
+.ctors
+ *crtbegin*.o(.ctors)
+ *(EXCLUDE_FILE(*crtend*.o) .ctors)
+ *(SORT(.ctors.*))
+ *(.ctors)
+
+.dtors
+ *crtbegin*.o(.dtors)
+ *(EXCLUDE_FILE(*crtend*.o) .dtors)
+ *(SORT(.dtors.*))
+ *(.dtors)
+
+.jcr
+ *(.jcr)
+
+.data.rel.ro
+ *(.data.rel.ro.local)
+ *(.data.rel.ro*)
+
+.data           0x000000000892a5bc    0xa8ba8
+                0x000000000892a5bc                _fdata = .
+ *(.data .data.* .gnu.linkonce.d.*)
+ .data          0x000000000892a5bc    0xa8ba8 icons.o
+                0x0000000008955b1c                light_rainData
+                0x000000000894adc4                heavy_rain_icyData
+                0x00000000089bbdd4                tstorm_dayData
+                0x000000000899ca44                snow_rainData
+                0x0000000008952154                hot_dayData
+                0x000000000895ceac                light_snowData
+                0x000000000896ef94                partly_cloudy_dayData
+                0x0000000008967c04                nightData
+                0x000000000892a5bc                clouds_hailData
+                0x000000000893c6a4                foggy_dayData
+                0x000000000898ca44                snowflakesData
+                0x0000000008960874                mostly_cloudy_dayData
+                0x000000000896423c                mostly_cloudy_nightData
+                0x00000000089b840c                thunderstorm_rainData
+                0x0000000008984a44                snowData
+                0x00000000089c779c                windyData
+                0x0000000008994a44                snowy_nightData
+                0x0000000008943a34                frigidData
+                0x00000000089aca44                snow_windData
+                0x000000000892df84                cloudyData
+                0x000000000897295c                partly_cloudy_nightData
+                0x00000000089bf79c                tstorm_nightData
+                0x0000000008979cec                rainy_nightData
+                0x000000000897d6b4                rain_dayData
+                0x000000000894e78c                heavy_snowData
+                0x000000000896b5cc                naData
+                0x0000000008935314                dustData
+                0x000000000894006c                foggy_nightData
+                0x0000000008976324                rainData
+                0x00000000089a4a44                snow_rain_icyData
+                0x00000000089b4a44                sunnyData
+                0x00000000089594e4                light_rain_icyData
+                0x0000000008938cdc                fogData
+                0x000000000893194c                drizzleData
+                0x000000000898107c                smokeData
+                0x00000000089473fc                hazeData
+                0x00000000089cf79c                windy_rainData
+ *(.gnu.linkonce.d.*personality*)
+
+.xodata.sceModuleInfo
+                0x00000000089d3180       0x40
+ .xodata.sceModuleInfo
+                0x00000000089d3180       0x40 startup.o
+
+.data1
+ *(.data1)
+                0x00000000089d31c0                . = .
+                0x00000000089db1b0                _gp = (ALIGN (0x10) + 0x7ff0)
+
+.got
+ *(.got.plt)
+ *(.got)
+
+.sdata          0x00000000089d31c0      0x17c
+ *(.sdata .sdata.* .gnu.linkonce.s.*)
+ .sdata         0x00000000089d31c0       0x18 main.o
+                0x00000000089d31d0                g_fdLog
+ .sdata         0x00000000089d31d8       0x14 pg.o
+                0x00000000089d31e8                pg_vramtop
+ .sdata         0x00000000089d31ec        0x8 malloc.o
+                0x00000000089d31ec                allocp1
+ .sdata         0x00000000089d31f4       0x10 screenshot.o
+ .sdata         0x00000000089d3204      0x138 icons.o
+                0x00000000089d32dc                snowy_nightWidth
+                0x00000000089d3224                fogWidth
+                0x00000000089d322c                foggy_dayWidth
+                0x00000000089d3310                tstorm_dayHeight
+                0x00000000089d3280                mostly_cloudy_dayHeight
+                0x00000000089d32b0                rainHeight
+                0x00000000089d3208                clouds_hailHeight
+                0x00000000089d328c                nightWidth
+                0x00000000089d3260                hot_dayHeight
+                0x00000000089d3238                foggy_nightHeight
+                0x00000000089d3274                light_snowWidth
+                0x00000000089d32a8                partly_cloudy_nightHeight
+                0x00000000089d3268                light_rainHeight
+                0x00000000089d3318                tstorm_nightHeight
+                0x00000000089d32c0                rain_dayHeight
+                0x00000000089d3214                drizzleWidth
+                0x00000000089d32e4                snow_rainWidth
+                0x00000000089d3220                dustHeight
+                0x00000000089d32d4                snowflakesWidth
+                0x00000000089d32e8                snow_rainHeight
+                0x00000000089d327c                mostly_cloudy_dayWidth
+                0x00000000089d32ac                rainWidth
+                0x00000000089d3304                thunderstorm_rainWidth
+                0x00000000089d32bc                rain_dayWidth
+                0x00000000089d3218                drizzleHeight
+                0x00000000089d32cc                snowWidth
+                0x00000000089d32a0                partly_cloudy_dayHeight
+                0x00000000089d3314                tstorm_nightWidth
+                0x00000000089d32b8                rainy_nightHeight
+                0x00000000089d326c                light_rain_icyWidth
+                0x00000000089d32f8                snow_windHeight
+                0x00000000089d3258                heavy_snowHeight
+                0x00000000089d3324                windy_rainWidth
+                0x00000000089d3290                nightHeight
+                0x00000000089d3228                fogHeight
+                0x00000000089d3308                thunderstorm_rainHeight
+                0x00000000089d325c                hot_dayWidth
+                0x00000000089d3264                light_rainWidth
+                0x00000000089d3288                mostly_cloudy_nightHeight
+                0x00000000089d32a4                partly_cloudy_nightWidth
+                0x00000000089d330c                tstorm_dayWidth
+                0x00000000089d3254                heavy_snowWidth
+                0x00000000089d3284                mostly_cloudy_nightWidth
+                0x00000000089d32c4                smokeWidth
+                0x00000000089d3328                windy_rainHeight
+                0x00000000089d3204                clouds_hailWidth
+                0x00000000089d321c                dustWidth
+                0x00000000089d32d8                snowflakesHeight
+                0x00000000089d32b4                rainy_nightWidth
+                0x00000000089d3210                cloudyHeight
+                0x00000000089d3270                light_rain_icyHeight
+                0x00000000089d320c                cloudyWidth
+                0x00000000089d3240                frigidHeight
+                0x00000000089d32d0                snowHeight
+                0x00000000089d329c                partly_cloudy_dayWidth
+                0x00000000089d32f0                snow_rain_icyHeight
+                0x00000000089d323c                frigidWidth
+                0x00000000089d3244                hazeWidth
+                0x00000000089d3230                foggy_dayHeight
+                0x00000000089d32ec                snow_rain_icyWidth
+                0x00000000089d3250                heavy_rain_icyHeight
+                0x00000000089d3278                light_snowHeight
+                0x00000000089d331c                windyWidth
+                0x00000000089d32c8                smokeHeight
+                0x00000000089d3248                hazeHeight
+                0x00000000089d3234                foggy_nightWidth
+                0x00000000089d324c                heavy_rain_icyWidth
+                0x00000000089d3300                sunnyHeight
+                0x00000000089d32fc                sunnyWidth
+                0x00000000089d3320                windyHeight
+                0x00000000089d32e0                snowy_nightHeight
+                0x00000000089d3294                naWidth
+                0x00000000089d32f4                snow_windWidth
+                0x00000000089d3298                naHeight
+
+.lit8
+ *(.lit8)
+
+.lit4
+ *(.lit4)
+                0x00000000089d333c                _edata = .
+                0x00000000089d333c                PROVIDE (edata, .)
+                0x00000000089d333c                __bss_start = .
+                0x00000000089d333c                _fbss = .
+
+.sbss           0x00000000089d333c       0x40
+                0x00000000089d333c                PROVIDE (__sbss_start, .)
+                0x00000000089d333c                PROVIDE (___sbss_start, .)
+ *(.dynsbss)
+ *(.sbss .sbss.* .gnu.linkonce.sb.*)
+ .sbss          0x00000000089d333c       0x24 main.o
+                0x00000000089d3340                tail
+                0x00000000089d333c                head
+                0x00000000089d3344                current
+ .sbss          0x00000000089d3360        0x8 malloc.o
+                0x00000000089d3360                has_initialized
+ *(.scommon)
+ .scommon       0x00000000089d3368        0xc pg.o
+                0x00000000089d3368                pg_showframe
+                0x00000000089d336c                pg_screenmode
+                0x00000000089d3370                pg_drawframe
+ .scommon       0x00000000089d3374        0x8 malloc.o
+                0x00000000089d3374                last_valid_address
+                0x00000000089d3378                managed_memory_start
+                0x00000000089d337c                PROVIDE (__sbss_end, .)
+                0x00000000089d337c                PROVIDE (___sbss_end, .)
+
+.bss            0x00000000089d337c   0x800420
+ *(.dynbss)
+ *(.bss .bss.* .gnu.linkonce.b.*)
+ .bss           0x00000000089d337c       0x20 main.o
+ .bss           0x00000000089d339c   0x800000 malloc.o
+ *(COMMON)
+ COMMON         0x00000000091d339c      0x400 malloc.o
+                0x00000000091d339c                allocbuf
+                0x00000000091d379c                . = ALIGN (0x4)
+                0x00000000091d379c                . = ALIGN (0x4)
+                0x00000000091d379c                _end = .
+                0x00000000091d379c                PROVIDE (end, .)
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment        0x0000000000000000      0x120
+ *(.comment)
+ .comment       0x0000000000000000       0x24 main.o
+ .comment       0x0000000000000024       0x24 pg.o
+ .comment       0x0000000000000048       0x24 nlh.o
+ .comment       0x000000000000006c       0x24 _clib.o
+ .comment       0x0000000000000090       0x24 parser.o
+ .comment       0x00000000000000b4       0x24 malloc.o
+ .comment       0x00000000000000d8       0x24 screenshot.o
+ .comment       0x00000000000000fc       0x24 icons.o
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x0000000000000000      0x128
+ *(.debug_aranges)
+ .debug_aranges
+                0x0000000000000000       0x28 startup.o
+ .debug_aranges
+                0x0000000000000028       0x20 main.o
+ .debug_aranges
+                0x0000000000000048       0x20 pg.o
+ .debug_aranges
+                0x0000000000000068       0x20 nlh.o
+ .debug_aranges
+                0x0000000000000088       0x20 _clib.o
+ .debug_aranges
+                0x00000000000000a8       0x20 parser.o
+ .debug_aranges
+                0x00000000000000c8       0x20 malloc.o
+ .debug_aranges
+                0x00000000000000e8       0x20 screenshot.o
+ .debug_aranges
+                0x0000000000000108       0x20 icons.o
+
+.debug_pubnames
+                0x0000000000000000      0xd38
+ *(.debug_pubnames)
+ .debug_pubnames
+                0x0000000000000000       0xda main.o
+ .debug_pubnames
+                0x00000000000000da      0x19d pg.o
+ .debug_pubnames
+                0x0000000000000277       0x60 nlh.o
+ .debug_pubnames
+                0x00000000000002d7       0x96 _clib.o
+ .debug_pubnames
+                0x000000000000036d       0x2a parser.o
+ .debug_pubnames
+                0x0000000000000397       0xc6 malloc.o
+ .debug_pubnames
+                0x000000000000045d       0x3d screenshot.o
+ .debug_pubnames
+                0x000000000000049a      0x89e icons.o
+
+.debug_info     0x0000000000000000     0x3956
+ *(.debug_info .gnu.linkonce.wi.*)
+ .debug_info    0x0000000000000000       0x59 startup.o
+ .debug_info    0x0000000000000059      0xc47 main.o
+ .debug_info    0x0000000000000ca0      0xa02 pg.o
+ .debug_info    0x00000000000016a2      0x485 nlh.o
+ .debug_info    0x0000000000001b27      0x40b _clib.o
+ .debug_info    0x0000000000001f32      0x1ab parser.o
+ .debug_info    0x00000000000020dd      0x4c1 malloc.o
+ .debug_info    0x000000000000259e      0x296 screenshot.o
+ .debug_info    0x0000000000002834     0x1122 icons.o
+
+.debug_abbrev   0x0000000000000000      0x815
+ *(.debug_abbrev)
+ .debug_abbrev  0x0000000000000000       0x10 startup.o
+ .debug_abbrev  0x0000000000000010      0x217 main.o
+ .debug_abbrev  0x0000000000000227      0x122 pg.o
+ .debug_abbrev  0x0000000000000349      0x157 nlh.o
+ .debug_abbrev  0x00000000000004a0       0xbd _clib.o
+ .debug_abbrev  0x000000000000055d       0x81 parser.o
+ .debug_abbrev  0x00000000000005de       0xfb malloc.o
+ .debug_abbrev  0x00000000000006d9       0xb2 screenshot.o
+ .debug_abbrev  0x000000000000078b       0x8a icons.o
+
+.debug_line     0x0000000000000000      0xdda
+ *(.debug_line)
+ .debug_line    0x0000000000000000       0xfc startup.o
+ .debug_line    0x00000000000000fc      0x3bb main.o
+ .debug_line    0x00000000000004b7      0x201 pg.o
+ .debug_line    0x00000000000006b8       0xfa nlh.o
+ .debug_line    0x00000000000007b2       0xa8 _clib.o
+ .debug_line    0x000000000000085a       0x7a parser.o
+ .debug_line    0x00000000000008d4      0x104 malloc.o
+ .debug_line    0x00000000000009d8       0x79 screenshot.o
+ .debug_line    0x0000000000000a51      0x389 icons.o
+
+.debug_frame    0x0000000000000000      0x84c
+ *(.debug_frame)
+ .debug_frame   0x0000000000000000      0x280 main.o
+ .debug_frame   0x0000000000000280      0x208 pg.o
+ .debug_frame   0x0000000000000488       0xf0 nlh.o
+ .debug_frame   0x0000000000000578      0x144 _clib.o
+ .debug_frame   0x00000000000006bc       0x48 parser.o
+ .debug_frame   0x0000000000000704       0xb8 malloc.o
+ .debug_frame   0x00000000000007bc       0x48 screenshot.o
+ .debug_frame   0x0000000000000804       0x48 icons.o
+
+.debug_str      0x0000000000000000       0x53
+ *(.debug_str)
+ .debug_str     0x0000000000000000       0x40 main.o
+ .debug_str     0x0000000000000040        0x6 pg.o
+ .debug_str     0x0000000000000046        0xd malloc.o
+
+.debug_loc
+ *(.debug_loc)
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+
+/DISCARD/
+ *(.comment)
+ *(.pdr)
+ *(.note.GNU-stack)
+OUTPUT(out elf32-littlemips)
+
+.mdebug.eabi32  0x0000000000000000        0x0
+
+.gcc_compiled_long32
+                0x0000000000000000        0x0

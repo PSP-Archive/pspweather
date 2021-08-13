@@ -1,0 +1,40 @@
+ v1.0.6 (7/27/06)
+
+- Port to new SDK
+- Fix DHCP issue
+- Fix bugs and memory leak
+- Add icon
+
+ v1.05 (7/10/05)
+-----------------
+News
+- Released source code
+
+Additions
+- Added other countries to get their weather too
+  Go to http://xoap.weather.com/search/search?where= and type your location there
+  And it will display location id's, choose which one you need
+  
+  eg "http://xoap.weather.com/search/search?where=Rome Italy"
+  <loc id="ITXX0067" type="1">Rome, Italy</loc>
+  So use ITXX0067 in the config file
+
+- Added unit measurement (s for standard/m for Metric)
+
+- Added in other weather icons
+  These were edited icons from a pack called Konfabulator.
+  I just made a black background, very crappy job, but I'm no computer graphic artist.
+
+- Up to 9 location ID's can be now stored in the config file, please make sure the
+  totalIds tag is set accordingly to how many you have.
+  
+Bug Fixes/Changes
+- Changed fonts and colors around so it's more representable
+
+- Fixed description under weather icon, was displaying moon phase.
+
+- Refreshing is fixed
+
+ v1.0 (7/7/05)
+-----------------
+- Inital Release
